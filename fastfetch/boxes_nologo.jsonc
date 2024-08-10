@@ -1,0 +1,407 @@
+// FASTFETCH CONFIGURATION
+// By jan-rex
+// Path:     $HOME/.config/fastfetch/boxes_nologo.jsonc
+// Execute:  fastfetch --config $HOME/.config/fastfetch/boxes_nologo.jsonc
+//
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "none",
+    "padding": {
+      "top": 2,
+    },
+  },
+  "general": {},
+  "display": {
+    // disableLinewrap     - OBJECT      - "TRUE" - Whether to disable line wrap during the run
+    "disableLinewrap": "false",
+    // separator           - STRING      - ": "   - Set the separator between key and value
+    "separator": "",
+    // color               - COMBINATION -        - Set the color of the keys and title
+    //      - keys         - enum (of string) 	   - Set the color of the keys
+    //      - title 	     - enum (of string) 	   - Set the color of the title
+    //      - output 	     - enum (of string) 	   - Set the color of the module output
+    //      - separator    - enum (of string) 	   - Set the color of the key-value separator
+    // brightColor  	     - BOOLEAN     - "TRUE" - Set if the keys, title and ASCII logo should be printed in bright color
+    // key                 - OBJECT               - Set how module keys should be displayed
+    //      - width 	     - integer              - Align the width of keys to number of characters, 0 to disable
+    //      - type 	       - enum (of string)     - Set whether to show icon before string keys
+    //      - paddingLeft  - integer              - Set the left padding of keys
+    "key": {
+      "width": 16,
+    },
+    // size                - OBJECT               - Set how a size value should be displayed
+    //      - binaryPrefix - Combination          - Set the binary prefix to used when formatting sizes
+    //      - maxPrefix    - enum (of string)     - Set the largest binary prefix to use when formatting sizes
+    //      - ndigits      - integer              - Set the number of digits to keep after the decimal point when formatting sizes
+    // constants
+    "constants": [
+      // CONSTANT {$1} - COLOR BACKGROUND FOR KEY
+      "\u001b[48;2;43;43;69m",
+      // CONSTANT {$2} - COLOR BACKGROUND FOR OUTPUT
+      "\u001b[48;2;56;59;78m",
+      // CONSTANT {$3} - VERTICAL BARS AT START AND 75th CHARACTERS FORWARD AND BACKWARD
+      "\u001b[90m│                                                            │\u001b[60D\u001b[39m",
+    ],
+  },
+  //------------COLOR------------
+  // CSI n m
+  //
+  //<color> must be a color encoding as ANSI escape sequences. It is inserted between "ESC[" and "m".
+  // {# } = Escape caracters f or introduce COLOR
+  // {# } = \u001b[ m
+  //   {# = \u001b[
+  //   }  =         m
+  // {#N}       ==> N = Integer Number for COLOR
+  // \u001b[Nm  ==> N = Integer Number for COLOR
+  // \u001b[34m ==> 34 = COLOR 34
+  //
+  // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
+  //Infos about them can be found here: https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters.
+  //Examples:
+  //   35:              sets the color to magenta
+  //   38;5;38:         sets the color to 38th color of ANSI 256 colors
+  //   4;92:            sets the color to bright green with underline
+  //   5;104:           blinking text on a blue background
+  //
+  //ANSI named colors are also supported:
+  //   magenta:         equivalent to `35`
+  //   underline_bright_green: equivalent to `4;92`
+  //
+  //
+  //
+  // #define FF_COLOR_MODE_RESET "0;"
+  // #define FF_COLOR_MODE_BOLD "1;"
+  // #define FF_COLOR_MODE_DIM "2;"
+  // #define FF_COLOR_MODE_ITALIC "3;"
+  // #define FF_COLOR_MODE_UNDERLINE "4;"
+  // #define FF_COLOR_MODE_BLINK "5;"
+  // #define FF_COLOR_MODE_INVERSE "7;"
+  // #define FF_COLOR_MODE_HIDDEN "8;"
+  // #define FF_COLOR_MODE_STRIKETHROUGH "9;"
+  //
+  // #define FF_COLOR_FG_BLACK "30"
+  // #define FF_COLOR_FG_RED "31"
+  // #define FF_COLOR_FG_GREEN "32"
+  // #define FF_COLOR_FG_YELLOW "33"
+  // #define FF_COLOR_FG_BLUE "34"
+  // #define FF_COLOR_FG_MAGENTA "35"
+  // #define FF_COLOR_FG_CYAN "36"
+  // #define FF_COLOR_FG_WHITE "37"
+  // #define FF_COLOR_FG_DEFAULT "39"
+  //
+  // #define FF_COLOR_FG_LIGHT_BLACK "90"
+  // #define FF_COLOR_FG_LIGHT_RED "91"
+  // #define FF_COLOR_FG_LIGHT_GREEN "92"
+  // #define FF_COLOR_FG_LIGHT_YELLOW "93"
+  // #define FF_COLOR_FG_LIGHT_BLUE "94"
+  // #define FF_COLOR_FG_LIGHT_MAGENTA "95"
+  // #define FF_COLOR_FG_LIGHT_CYAN "96"
+  // #define FF_COLOR_FG_LIGHT_WHITE "97"
+  //
+  // #define FF_COLOR_BG_BLACK "40"
+  // #define FF_COLOR_BG_RED "41"
+  // #define FF_COLOR_BG_GREEN "42"
+  // #define FF_COLOR_BG_YELLOW "43"
+  // #define FF_COLOR_BG_BLUE "44"
+  // #define FF_COLOR_BG_MAGENTA "45"
+  // #define FF_COLOR_BG_CYAN "46"
+  // #define FF_COLOR_BG_WHITE "47"
+  // #define FF_COLOR_BG_DEFAULT "49"
+  // #define FF_COLOR_BG_LIGHT_BLACK "100"
+  // #define FF_COLOR_BG_LIGHT_RED "101"
+  // #define FF_COLOR_BG_LIGHT_GREEN "102"
+  // #define FF_COLOR_BG_LIGHT_YELLOW "103"
+  // #define FF_COLOR_BG_LIGHT_BLUE "104"
+  // #define FF_COLOR_BG_LIGHT_MAGENTA "105"
+  // #define FF_COLOR_BG_LIGHT_CYAN "106"
+  // #define FF_COLOR_BG_LIGHT_WHITE "107"
+  // #define FF_COLOR_FG_256 "38;5;"
+  // #define FF_COLOR_BG_256 "48;5;"
+  //    ESC[38;5;⟨n⟩m Select foreground color      where n is a number from the table below
+  //    ESC[48;5;⟨n⟩m Select background color
+  //      0-  7:  standard colors (as in ESC [ 30–37 m)
+  //      8- 15:  high intensity colors (as in ESC [ 90–97 m)
+  //     16-231:  6 × 6 × 6 cube (216 colors): 16 + 36 × r + 6 × g + b (0 ≤ r, g, b ≤ 5)
+  //    232-255:  grayscale from dark to light in 24 steps
+  // #define FF_COLOR_FG_RGB "38;2;"
+  // #define FF_COLOR_BG_RGB "48;2;"
+  //    ESC[38;2;⟨r⟩;⟨g⟩;⟨b⟩ m Select RGB foreground color
+  //    ESC[48;2;⟨r⟩;⟨g⟩;⟨b⟩ m Select RGB background color
+  //
+  //
+  //------------??????------------
+  //
+  // \u001b[ C
+  // \u001b[NC
+  // CSI n C 	[CUF] 	Cursor Forward
+  //
+  //
+  // \u001b[ D
+  // \u001b[ND
+  //  CSI n D 	[CUB] 	Cursor Back
+  //
+  //=======================================
+  "modules": [
+    //    {
+    //      "type": "",         // -
+    //      "key": "",          //Key of the module
+    //      "keyColor": "",     //Color of the module key. Left empty to use `display.color.keys`
+    //      "keyIcon": "",      //Set the icon to be displayed by `display.keyType: "icon"`
+    //      "keyWidth": "",     //Width of the module key. Use 0 to use `display.keyWidth`
+    //      "outputColor": "",  //Output color of the module. Left empty to use `display.color.output`
+    //      "format": "",       //Output format of the module. See `-h -format` for detail. I.e: fastfetch -h disk-format
+    //    },
+    //
+    // CUSTOM - Top UI bar
+    {
+      "type": "custom",
+      "key": "{#90}{$1}╭─────────────╮",
+      "format": "{#90}{$2}╭────────────────────────────────────────────────────────────╮",
+    },
+    {
+      "type": "title",
+      "key": "{#90}{$1}│ {#92}User        {#90}│",
+      //"fqdn": false,
+      "format": "{$2}{$3}{user-name} {#2}[{home-dir}]",
+      //fastfetch -h title-format
+      // {1}: User name - user-name
+      // {3}: Home directory - home-dir
+      // The default is something similar to "{6}{7}{8}".
+    },
+    {
+      "type": "users",
+      "key": "{#90}{$1}│ {#92}Users       {#90}│",
+      "myselfOnly": false,
+      "format": "{$2}{$3}{1}@{host-name}  {#2}[IP:{client-ip}]  {#2}[Login time: {login-time}]",
+      // fastfetch -h users-format
+      // {1}: User name - user-name
+      // {2}: Host name - host-name
+      // {3}: Session name - session
+      // {4}: Client IP - client-ip
+      // {5}: Login Time in local timezone - login-time
+      // The default is something similar to "{1}@{2} - login time {5}".
+    },
+    {
+      "type": "datetime",
+      "key": "{#90}{$1}│ {#92}Datetime    {#90}│",
+      "format": "{$2}{$3}{year}-{month-pretty}-{day-in-month}  {hour-pretty}:{minute-pretty}:{second-pretty}  {#2}{weekday}  {#2}[W{week}] {#2}[UTC{offset-from-utc}]",
+      //fastfetch -h datetime-format
+      // {1}: year - year
+      // {4}: month with leading zero - month-pretty
+      // {7}: week number on year - week
+      // {8}: weekday - weekday
+      // {11}: day in month - day-in-month
+      // {14}: hour with leading zero - hour-pretty
+      // {18}: minute with leading zero - minute-pretty
+      // {20}: second with leading zero - second-pretty
+      // {21}: offset from UTC in the ISO 8601 format - offset-from-utc
+      // The default is something similar to "{1}-{4}-{11} {14}:{18}:{20}".
+    },
+    {
+      "type": "title",
+      "key": "{#90}{$1}│ {#93}Host:       {#90}│",
+      //"fqdn": false,
+      "format": "{$2}{$3}{#1}{#36}{host-name}",
+      //fastfetch -h title-format
+      // {2}: Host name - host-name
+      // The default is something similar to "{6}{7}{8}".
+    },
+    {
+      "type": "host",
+      "key": "{#90}{$1}│ {#93}Machine     {#90}│",
+      "format": "{$2}{$3}{name} {#2}{version}",
+      // fastfetch -h host-format
+      // {2}: product name - name
+      // {3}: product version - version
+      // The default is something similar to "{2} {3}".
+    },
+    {
+      "type": "os",
+      "key": "{#90}{$1}│ {#93}OS          {#90}│",
+      "format": "{$2}{$3}{pretty-name} {codename} {#2}[v{version}] {#2}[{arch}]",
+      // fastfetch -h os-format
+      // {3}: Pretty name of the OS - pretty-name
+      // {8}: Version of the OS - version
+      // {10}: Version codename of the OS - codename
+      // {12}: Architecture of the OS - arch
+      // The default is something similar to "{3} {10} {12}".
+    },
+    {
+      "type": "kernel",
+      "key": "{#90}{$1}│ {#93}Kernel      {#90}│",
+      "format": "{$2}{$3}{sysname} {#2}[v{release}]",
+      // fastfetch -h kernel-format
+      // {1}: Sysname - sysname
+      // {2}: Release - release
+      // The default is something similar to "{1} {2}".
+    },
+    {
+      "type": "uptime",
+      "key": "{#90}{$1}│ {#93}Uptime      {#90}│",
+      //"format": "{$2}{$3}{days} Days {hours} Hours {minutes} Mins {seconds} Secs",
+      "format": "{$2}{$3}{days} Days + {hours}:{minutes}:{seconds}",
+      // fastfetch -h uptime-format
+      // {1}: Days - days
+      // {2}: Hours - hours
+      // {3}: Minutes - minutes
+      // {4}: Seconds - seconds
+      // The default is something similar to "{1} days {2} hours {3} mins".
+    },
+    // {
+    //   "type": "board",
+    //   "key": "{#5;104}Board",
+    //   "format": "{2} {1}",
+    //   //fastfetch -h board-format
+    //   // {1}: board name - name
+    //   // {2}: board vendor - vendor
+    // },
+    {
+      "type": "cpu",
+      "key": "{#90}{$1}│ {#91}CPU         {#90}│",
+      "showPeCoreCount": true,
+      "temp": true,
+      "format": "{$2}{$3}{name} {#2}[C:{core-types}] {#2}[{freq-max}]",
+      // fastfetch -h cpu-format
+      // {1}: Name - name
+      // {7}: Max frequency (formatted) - freq-max
+      // {9}: Logical core count grouped by frequency - core-types
+      // The default is something similar to "{1} ({5}) @ {7} GHz".
+    },
+    {
+      "type": "gpu",
+      "key": "{#90}{$1}│ {#91}GPU         {#90}│",
+      "detectionMethod": "auto",
+      "hideType": "none",
+      "temp": true,
+      "format": "{$2}{$3}{name} {#2}[C:{core-count}] {#2}[{type}]",
+      // fastfetch -h gpu-format
+      // {1}: GPU vendor - vendor
+      // {2}: GPU name - name
+      // {5}: GPU core count - core-count
+      // {6}: GPU type - type
+      // The default is something similar to "{1} {2}".
+    },
+    // {
+    //   "type": "physicalmemory",
+    //   "key": "Physical Memory",
+    // },
+    {
+      "type": "memory",
+      "key": "{#90}{$1}│ {#91}Memory      {#90}│",
+      "format": "{$2}{$3}{used} / {total} ({percentage}{$2})",
+      // fastfetch -h memory-format
+      // {1}: Used size - used
+      // {2}: Total size - total
+      // {3}: Percentage used (num) - percentage
+      // The default is something similar to "{1} / {2} ({3})".
+    },
+    // {
+    //   "type": "swap",
+    //   "key": "Swap",
+    // },
+    {
+      "type": "disk",
+      "key": "{#90}{$1}│ {#91}Disk        {#90}│",
+      "format": "{$2}{$3}{size-used} / {size-used} ({size-percentage}{$2})",
+      // fastfetch -h disk-format
+      // {1}: Size used - size-used
+      // {2}: Size total - size-total
+      // {3}: Size percentage num - size-percentage
+      // The default is something similar to "{1} / {2} ({3}) - {9}".
+    },
+    // {
+    //   "type": "battery",
+    //   "key": "Battery",
+    //   "temp": true,
+    // },
+    {
+      "type": "poweradapter",
+      "key": "{#90}{$1}│ {#91}Power       {#90}│",
+      "format": "{$2}{$3}{name}",
+      // fastfetch -h poweradapter-format
+      // {2}: PowerAdapter name - name
+      // The default is something similar to "{1}W".
+    },
+    {
+      "type": "terminal",
+      "key": "{#90}{$1}│ {#95}Terminal    {#90}│",
+      "format": "{$2}{$3}{pretty-name} {#2}[{version}]",
+      // fastfetch -h terminal-format
+      // {5}: Terminal pretty name - pretty-name
+      // {6}: Terminal version - version
+      // The default is something similar to "{5} {6}".
+    },
+    {
+      "type": "terminalfont",
+      "key": "{#90}{$1}│ {#95}Font        {#90}│",
+      "format": "{$2}{$3}{name}  {#2}[{size}]",
+      // fastfetch -h terminalfont-format
+      // {2}: Terminal font name - name
+      // {3}: Terminal font size - size
+      // The default is something similar to "{1}".
+    },
+    {
+      "type": "shell",
+      "key": "{#90}{$1}│ {#95}Shell       {#90}│",
+      "format": "{$2}{$3}{exe-name}  {#2}[v{version}] {#2}[{exe-path}] {#2}[PID:{pid}]",
+      // fastfetch -h shell-format
+      // {3}: Shell base name of arg0 - exe-name
+      // {4}: Shell version - version
+      // {5}: Shell pid - pid
+      // {7}: Shell full exe path - exe-path
+      // The default is something similar to "{3} {4}".
+    },
+    {
+      // localip IPv4
+      "type": "localip",
+      "key": "{#90}{$1}│ {#94}Local IPv4  {#90}│",
+      "showPrefixLen": true,
+      "showIpv4": true,
+      "showIpv6": false,
+      "format": "{$2}{$3}{ifname}: {ipv4}  {#2}[MTU:{mtu}]",
+      // fastfetch -h localip-format
+      // {1}: Local IPv4 address - ipv4
+      // {4}: Interface name - ifname
+      // {6}: MTU size in bytes - mtu
+      // The default is something similar to "{1}".
+    },
+    {
+      // localip IPv6
+      "type": "localip",
+      "key": "{#90}{$1}│ {#94}Local IPv6  {#90}│",
+      "showPrefixLen": true,
+      "showIpv4": false,
+      "showIpv6": true,
+      "format": "{$2}{$3}{ifname}: {ipv6}  {#2}[MTU:{mtu}]",
+      // fastfetch -h localip-format
+      // {2}: Local IPv6 address - ipv6
+      // {4}: Interface name - ifname
+      // {6}: MTU size in bytes - mtu
+      // The default is something similar to "{1}".
+    },
+    // {
+    //   "type": "dns",
+    //   "key": "DNS",
+    // },
+    {
+      "type": "publicip",
+      "key": "{#90}{$1}│ {#94}Public IPv4 {#90}│",
+      "format": "{$2}{$3}{ip}  {#2}[{location}]",
+      // fastfetch -h publicip-format
+      // {1}: Public IP address - ip
+      // {2}: Location - location
+      // The default is something similar to "{1} ({2})".
+    },
+    // {
+    //   "type": "colors",
+    //   "symbol": "background",
+    // },
+    // CUSTOM - Button UI bar
+    {
+      "type": "custom",
+      "key": "{#90}{$1}╰─────────────╯",
+      "format": "{#90}{$2}╰────────────────────────────────────────────────────────────╯",
+    },
+  ],
+}
