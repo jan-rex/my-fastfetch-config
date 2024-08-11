@@ -3,6 +3,10 @@ Welcome to my unique fastfetch config repo.
 
 **![Fastfetch](https://github.com/fastfetch-cli/fastfetch)** is multiplatform command-line tool designed to display system information in a visually appealing way, similar to Neofetch. It is lightweight, fast, and highly configurable, allowing users to fetch details like operating system, kernel version, CPU, memory, and more, and then present this information in a structured format with customizable themes. Fastfetch is particularly appreciated for its speed and minimal resource usage compared to similar tools.
 
+My fastfetch configuration is unique in the sense that I couldn’t find similar presets, either in the examples or from other people, especially when looking for background colors.
+
+Similarly, the .jsonc configuration files contain comments that explain the use of color settings, as well as details about the formats of the modules.
+
 I have uploaded my configuration so that it can be downloaded, modified, or the repository can be cloned.🫰
 
 
