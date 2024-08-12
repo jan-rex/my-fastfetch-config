@@ -17,6 +17,12 @@ I have uploaded my configuration so that it can be downloaded, modified, or the 
 **Screenshot without logo**:
 ![Screenshot no logo](screenshots/screenshot_no_logo.png "Screenshot whitout logo")
 
+:gift: **Screenshots logo text ASCII Art** (new):
+![Screenshot logo Text Ansi Shadow](screenshots/screenshot_logo_text_ansi_shadow.png "Screenshot logo Text Ansi Shadow")
+
+![Screenshot logo Text Bloody](screenshots/screenshot_logo_text_bloody.png "Screenshot logo Text Bloody")
+
+![Screenshot logo Text BlurVision-ascii](screenshots/screenshot_logo_text_blurvision-ascii.png "Screenshot logo Text BlurVision ascii")
 
 ## Tested
 The config is only tested on:
