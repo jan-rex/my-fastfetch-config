@@ -75,11 +75,17 @@ The files `*.jsonc` can be modified to suit specific requirements
 
     vim $HOME/.config/fastfetch/boxes_logo.jsonc
     vim $HOME/.config/fastfetch/boxes_nologo.jsonc
+    vim $HOME/.config/fastfetch/boxes_logo_text_ansi_shadow.jsonc
+    vim $HOME/.config/fastfetch/boxes_logo_text_bloody.jsonc
+    vim $HOME/.config/fastfetch/boxes_logo_text_blurvision-ascii.jsonc
 
 Usaege and test the config presets
 
     fastfetch --config $HOME/.config/fastfetch/boxes_logo.jsonc
     fastfetch --config $HOME/.config/fastfetch/boxes_nologo.jsonc
+    fastfetch --config $HOME/.config/fastfetch/boxes_logo_text_ansi_shadow.jsonc
+    fastfetch --config $HOME/.config/fastfetch/boxes_logo_text_bloody.jsonc
+    fastfetch --config $HOME/.config/fastfetch/boxes_logo_text_blurvision-ascii.jsonc
 
 ## Configure ZSH for execute fastfetch at startup
 
@@ -96,5 +102,8 @@ Add the content
 # FASTFETCH
 fastfetch --config $HOME/.config/fastfetch/boxes_logo.jsonc
 # fastfetch --config $HOME/.config/fastfetch/boxes_nologo.jsonc
+# fastfetch --config $HOME/.config/fastfetch/boxes_logo_text_ansi_shadow.jsonc
+# fastfetch --config $HOME/.config/fastfetch/boxes_logo_text_bloody.jsonc
+# fastfetch --config $HOME/.config/fastfetch/boxes_logo_text_blurvision-ascii.jsonc
 # ======================================
 ```
