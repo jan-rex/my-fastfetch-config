@@ -85,7 +85,7 @@ The files `*.jsonc` can be modified to suit specific requirements
     vim $HOME/.config/fastfetch/boxes_logo_text_bloody.jsonc
     vim $HOME/.config/fastfetch/boxes_logo_text_blurvision-ascii.jsonc
 
-Usaege and test the config presets
+Usage and test the config presets
 
     fastfetch --config $HOME/.config/fastfetch/boxes_logo.jsonc
     fastfetch --config $HOME/.config/fastfetch/boxes_nologo.jsonc
